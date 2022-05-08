@@ -39,7 +39,7 @@ public class VelocityStaffPlusPlus {
         QueryBuilderFactory queryBuilderFactory = new QueryBuilderFactory(DatabaseType.MYSQL, mySQLConnectionProvider);
         PlayerSettingsSqlRepositoryImpl playerSettingsSqlRepository = new PlayerSettingsSqlRepositoryImpl(queryBuilderFactory);
 
-        server.getCommandManager().register(CONFIG.getString("commands.personnel"), new PersonnelCommand(server, playerSettingsSqlRepository));
+        server.getCommandManager().register(CONFIG.getString("commands.personnel"), new PersonnelCommand(server, playerSettingsSqlRepository, CONFIG));
     }
 
 }

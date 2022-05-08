@@ -1,6 +1,9 @@
 [commands]
 personnel = "personnel"
 
+[permissions]
+member = "staff.member"
+
 [storage]
 host = 'localhost'
 user = 'root'
