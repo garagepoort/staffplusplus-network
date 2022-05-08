@@ -1,0 +1,11 @@
+[commands]
+personnel = "personnel"
+
+[storage]
+host = 'localhost'
+user = 'root'
+database = 'root'
+password = 'mypass'
+port = 3306
+max-pool-size = 5
+ssl-enabled = false
