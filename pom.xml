@@ -25,6 +25,13 @@
             <url>https://nexus.staffplusplus.org/repository/staffplusplus/</url>
         </repository>
     </repositories>
+    <distributionManagement>
+        <repository>
+            <id>staffplusplus-repo</id>
+            <name>Central Repository StaffPlusPlus</name>
+            <url>https://nexus.staffplusplus.org/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
     <dependencyManagement>
         <dependencies>
             <dependency>
