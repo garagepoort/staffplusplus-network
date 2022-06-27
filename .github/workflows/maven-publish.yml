@@ -1,0 +1,66 @@
+# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java#apache-maven-with-a-settings-path
+
+name: Maven Repsy Publish
+
+on:
+  workflow_dispatch:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+          server-id: staffplusplus-repo
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+
+      - name: Extract Maven project version
+        run: echo ::set-output name=version::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+        id: project
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
+      - name: Publish package
+        run: mvn --batch-mode deploy
+        env:
+          MAVEN_USERNAME: ${{ secrets.REPSY_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.REPSY_PASSWORD }}
+
+      - name: Deploy bungee
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: cd /home && ./network-update-latest-version.sh staffplusplus-network-bungee "${{steps.get-version.outputs.version}}" "https://testurl.be"
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          privateKey: ${{ secrets.KEY}}
+
+      - name: Deploy velocity
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: cd /home && ./network-update-latest-version.sh staffplusplus-network-velocity "${{steps.get-version.outputs.version}}" "https://testurl.be"
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          privateKey: ${{ secrets.KEY}}
+          
+      - name: Bump version
+        run: chmod +x ./bump_version.sh && ./bump_version.sh
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Bumped version" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ steps.vars.outputs.branch }}
