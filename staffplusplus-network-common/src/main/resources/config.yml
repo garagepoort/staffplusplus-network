@@ -1,0 +1,30 @@
+commands:
+  personnel: "personnel"
+
+permissions:
+  member: "staff.member"
+  command:
+    reload: "staffnetwork.command.reload"
+    personnel: "staffnetwork.command.personnel"
+
+messages:
+  personnel:
+    header: |
+      &b-
+      &bStaff Online
+    server-line: '&c%server%:'
+    player-line: '&c| &6%name%'
+    footer: '&b-'
+    no-results: |-
+      &c-
+      &cNo staff online
+      &c-
+
+storage:
+  host: 'localhost'
+  user: 'root'
+  database: 'root'
+  password: 'mypass'
+  port: 3306
+  max-pool-size: 5
+  ssl-enabled: false

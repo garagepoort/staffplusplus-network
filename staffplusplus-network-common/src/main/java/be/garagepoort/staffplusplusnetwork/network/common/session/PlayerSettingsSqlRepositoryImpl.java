@@ -1,4 +1,4 @@
-package be.garagepoort.staffplusplusnetwork.common.session;
+package be.garagepoort.staffplusplusnetwork.network.common.session;
 
 import be.garagepoort.mcioc.IocBean;
 import be.garagepoort.mcsqlmigrations.helpers.QueryBuilderFactory;

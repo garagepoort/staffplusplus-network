@@ -89,24 +89,20 @@
                             <relocations>
                                 <relocation>
                                     <pattern>be.garagepoort.mcsqlmigrations.</pattern>
-                                    <shadedPattern>be.garagepoort.staffplusplusnetwork.bungee.be.garagepoort.mcsqlmigrations.
+                                    <shadedPattern>be.garagepoort.staffplusplusnetwork.network.be.garagepoort.mcsqlmigrations.
                                     </shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>be.garagepoort.mcioc.</pattern>
-                                    <shadedPattern>be.garagepoort.staffplusplusnetwork.bungee.be.garagepoort.mcioc.</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>be.garagepoort.staffplusplusnetwork.common</pattern>
-                                    <shadedPattern>be.garagepoort.staffplusplusnetwork.bungee.be.garagepoort.staffplusplusnetwork.common</shadedPattern>
+                                    <shadedPattern>be.garagepoort.staffplusplusnetwork.network.be.garagepoort.mcioc.</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>com.zaxxer</pattern>
-                                    <shadedPattern>be.garagepoort.staffplusplusnetwork.bungee.libs.com.zaxxer</shadedPattern>
+                                    <shadedPattern>be.garagepoort.staffplusplusnetwork.network.libs.com.zaxxer</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>org.slf4j</pattern>
-                                    <shadedPattern>be.garagepoort.staffplusplusnetwork.bungee.libs.org.slf4j</shadedPattern>
+                                    <shadedPattern>be.garagepoort.staffplusplusnetwork.network.libs.org.slf4j</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>

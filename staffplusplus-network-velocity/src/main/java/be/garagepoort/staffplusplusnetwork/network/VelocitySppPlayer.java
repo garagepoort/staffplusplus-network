@@ -1,6 +1,6 @@
-package be.garagepoort.staffplusplusnetwork.velocity;
+package be.garagepoort.staffplusplusnetwork.network;
 
-import be.garagepoort.staffplusplusnetwork.common.SppPlayer;
+import be.garagepoort.staffplusplusnetwork.network.common.SppPlayer;
 import com.velocitypowered.api.proxy.Player;
 
 import java.util.UUID;

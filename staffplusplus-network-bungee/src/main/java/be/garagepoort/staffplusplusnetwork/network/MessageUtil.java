@@ -1,4 +1,4 @@
-package be.garagepoort.staffplusplusnetwork.bungee;
+package be.garagepoort.staffplusplusnetwork.network;
 
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.TextComponent;

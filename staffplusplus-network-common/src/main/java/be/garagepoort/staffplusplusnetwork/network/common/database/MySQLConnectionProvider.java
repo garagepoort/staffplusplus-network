@@ -1,4 +1,4 @@
-package be.garagepoort.staffplusplusnetwork.common.database;
+package be.garagepoort.staffplusplusnetwork.network.common.database;
 
 import be.garagepoort.mcioc.IocBean;
 import be.garagepoort.mcioc.configuration.ConfigProperty;

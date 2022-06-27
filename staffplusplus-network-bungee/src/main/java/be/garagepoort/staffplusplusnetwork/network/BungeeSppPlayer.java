@@ -1,6 +1,6 @@
-package be.garagepoort.staffplusplusnetwork.bungee;
+package be.garagepoort.staffplusplusnetwork.network;
 
-import be.garagepoort.staffplusplusnetwork.common.SppPlayer;
+import be.garagepoort.staffplusplusnetwork.network.common.SppPlayer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 import java.util.UUID;

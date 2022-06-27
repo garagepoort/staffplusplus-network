@@ -1,4 +1,4 @@
-package be.garagepoort.staffplusplusnetwork.velocity;
+package be.garagepoort.staffplusplusnetwork.network;
 
 import be.garagepoort.mcioc.tubingvelocity.TubingVelocityPlugin;
 import com.google.inject.Inject;
@@ -8,12 +8,12 @@ import com.velocitypowered.api.proxy.ProxyServer;
 
 import java.nio.file.Path;
 
-@Plugin(id = "staffplusplusnetwork", name = "StaffPlusPlus Network", version = "1.0.0",
+@Plugin(id = "staffplusplus-network", name = "StaffPlusPlus Network", version = "1.0.0",
     description = "A plugin with network specific commands for staff++", authors = {"Garagepoort"})
-public class VelocityStaffPlusPlus extends TubingVelocityPlugin {
+public class StaffPlusPlusVelocity extends TubingVelocityPlugin {
 
     @Inject
-    public VelocityStaffPlusPlus(ProxyServer server, @DataDirectory final Path folder) {
+    public StaffPlusPlusVelocity(ProxyServer server, @DataDirectory final Path folder) {
         super(server, folder);
     }
 

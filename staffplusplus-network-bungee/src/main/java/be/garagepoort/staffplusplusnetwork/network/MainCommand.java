@@ -1,5 +1,6 @@
-package be.garagepoort.staffplusplusnetwork.bungee;
+package be.garagepoort.staffplusplusnetwork.network;
 
+import be.garagepoort.mcioc.configuration.ConfigProperty;
 import be.garagepoort.mcioc.tubingbungee.annotations.IocBungeeCommandHandler;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
@@ -9,12 +10,12 @@ import net.md_5.bungee.api.plugin.Command;
 
 import java.util.List;
 
-import static be.garagepoort.staffplusplusnetwork.bungee.MessageUtil.colorizedComponent;
+import static be.garagepoort.staffplusplusnetwork.network.MessageUtil.colorizedComponent;
 
 @IocBungeeCommandHandler
 public class MainCommand extends Command {
-    public MainCommand() {
-        super("staffplusplus-bungee");
+    public MainCommand(@ConfigProperty("permissions.command.reload") String reloadPermission) {
+        super("staffplusplus-network", reloadPermission);
     }
 
     @Override
@@ -23,6 +24,7 @@ public class MainCommand extends Command {
             TextComponent textComponent = new TextComponent("Invalid use of command. Please add 'reload' to reload the plugin");
             textComponent.setColor(ChatColor.RED);
             commandSender.sendMessage(textComponent);
+            return;
         }
 
         StaffPlusPlusBungeePlugin.getPlugin().reload();

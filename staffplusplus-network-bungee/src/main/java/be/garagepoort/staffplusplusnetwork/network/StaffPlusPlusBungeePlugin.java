@@ -1,4 +1,4 @@
-package be.garagepoort.staffplusplusnetwork.bungee;
+package be.garagepoort.staffplusplusnetwork.network;
 
 import be.garagepoort.mcioc.tubingbungee.TubingBungeePlugin;
 

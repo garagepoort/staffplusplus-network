@@ -1,4 +1,4 @@
-package be.garagepoort.staffplusplusnetwork.common;
+package be.garagepoort.staffplusplusnetwork.network.common;
 
 import be.garagepoort.mcioc.IocBeanProvider;
 import be.garagepoort.mcioc.TubingConfiguration;
