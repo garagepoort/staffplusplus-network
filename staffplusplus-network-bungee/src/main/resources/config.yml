@@ -1,0 +1,19 @@
+commands:
+  personnel: "personnel"
+
+permissions:
+  member: "staff.member"
+
+messages:
+  personnel:
+    server-line: "&6[&c%server%&6]"
+    player-line: "&4- &6%name%"
+
+storage:
+  host: 'localhost'
+  user: 'root'
+  database: 'root'
+  password: 'mypass'
+  port: 3306
+  max-pool-size: 5
+  ssl-enabled: false

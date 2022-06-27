@@ -1,4 +1,4 @@
-package be.garagepoort.staffplusplusnetwork.database;
+package be.garagepoort.staffplusplusnetwork.common.database;
 
 public class DatabaseException extends RuntimeException {
     public DatabaseException(String message, Throwable cause) {

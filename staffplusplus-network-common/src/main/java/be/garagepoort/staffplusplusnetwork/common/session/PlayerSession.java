@@ -1,4 +1,4 @@
-package be.garagepoort.staffplusplusnetwork.session;
+package be.garagepoort.staffplusplusnetwork.common.session;
 
 import net.shortninja.staffplusplus.vanish.VanishType;
 

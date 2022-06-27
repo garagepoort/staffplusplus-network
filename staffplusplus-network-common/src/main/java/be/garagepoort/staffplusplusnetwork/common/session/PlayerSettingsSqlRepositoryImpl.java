@@ -1,5 +1,6 @@
-package be.garagepoort.staffplusplusnetwork.session;
+package be.garagepoort.staffplusplusnetwork.common.session;
 
+import be.garagepoort.mcioc.IocBean;
 import be.garagepoort.mcsqlmigrations.helpers.QueryBuilderFactory;
 import net.shortninja.staffplusplus.vanish.VanishType;
 
@@ -11,6 +12,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@IocBean
 public class PlayerSettingsSqlRepositoryImpl {
     private final QueryBuilderFactory query;
 

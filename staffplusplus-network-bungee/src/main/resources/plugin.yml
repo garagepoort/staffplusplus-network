@@ -1,0 +1,4 @@
+name: StaffPlusPlusBungee
+main: be.garagepoort.staffplusplusnetwork.bungee.StaffPlusPlusBungeePlugin
+version: ${project.version}
+author: Garagepoort
