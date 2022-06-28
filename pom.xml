@@ -7,7 +7,7 @@
     <groupId>be.garagepoort</groupId>
     <artifactId>staffplusplus-network</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <modules>
         <module>staffplusplus-network-common</module>
         <module>staffplusplus-network-velocity</module>
@@ -37,7 +37,7 @@
             <dependency>
                 <groupId>be.garagepoort</groupId>
                 <artifactId>staffplusplus-network-common</artifactId>
-                <version>1.0.2</version>
+                <version>1.0.3</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
