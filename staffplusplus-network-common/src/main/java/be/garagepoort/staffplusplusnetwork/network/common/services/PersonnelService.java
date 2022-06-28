@@ -17,6 +17,8 @@ public class PersonnelService {
 
     @ConfigProperty("permissions.member")
     private String memberPermission;
+    @ConfigProperty("personnel-module.hide-vanished")
+    private boolean hideVanished;
     @ConfigProperty("messages.personnel.header")
     private String headerMessage;
     @ConfigProperty("messages.personnel.footer")
@@ -67,15 +69,21 @@ public class PersonnelService {
         List<SppPlayer> staffPlayers = allPlayers.stream()
             .filter(p -> p.hasPermission(memberPermission))
             .collect(Collectors.toList());
-        List<UUID> staffUuids = staffPlayers.stream()
-            .map(SppPlayer::getId)
-            .collect(Collectors.toList());
 
-        List<PlayerSettings> settings = playerSettingsSqlRepository.findSettings(staffUuids);
-        List<UUID> uuidsToHide = settings.stream().filter(PlayerSettings::isVanished).map(PlayerSettings::getUuid).collect(Collectors.toList());
+        if (hideVanished) {
+            List<UUID> staffUuids = staffPlayers.stream()
+                .map(SppPlayer::getId)
+                .collect(Collectors.toList());
+
+            List<PlayerSettings> settings = playerSettingsSqlRepository.findSettings(staffUuids);
+            List<UUID> uuidsToHide = settings.stream().filter(PlayerSettings::isVanished).map(PlayerSettings::getUuid).collect(Collectors.toList());
+
+            return staffPlayers.stream()
+                .filter(player -> !uuidsToHide.contains(player.getId()))
+                .collect(Collectors.groupingBy(SppPlayer::getServerName));
+        }
 
         return staffPlayers.stream()
-            .filter(player -> !uuidsToHide.contains(player.getId()))
             .collect(Collectors.groupingBy(SppPlayer::getServerName));
     }
 }

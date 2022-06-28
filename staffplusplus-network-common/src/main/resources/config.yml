@@ -20,6 +20,11 @@ messages:
       &cNo staff online
       &c-
 
+personnel-module:
+  # Determines if the plugin should hook into the vanish-module of the core plugin
+  # Only works if you are also using Staff++ vanish
+  hide-vanished: false
+
 storage:
   host: 'localhost'
   user: 'root'
