@@ -41,13 +41,26 @@ public class PersonnelService {
         }
 
         List<String> result = new ArrayList<>();
-        result.add(headerMessage);
+        if (isNotEmpty(headerMessage)) {
+            result.add(headerMessage);
+        }
         staffOnServers.forEach((serverName, players) -> {
-            result.add(serverLineMessage.replace("%server%", serverName));
-            for (SppPlayer player : players) result.add(playerLineMessage.replace("%name%", player.getUsername()));
+            if (isNotEmpty(serverLineMessage)) {
+                result.add(serverLineMessage.replace("%server%", serverName));
+            }
+            for (SppPlayer player : players)
+                result.add(playerLineMessage
+                    .replace("%server%", serverName)
+                    .replace("%name%", player.getUsername()));
         });
-        result.add(footerMessage);
+        if (isNotEmpty(footerMessage)) {
+            result.add(footerMessage);
+        }
         return String.join("\n", result);
+    }
+
+    private boolean isNotEmpty(String message) {
+        return message != null && !message.equals("");
     }
 
     public Map<String, List<SppPlayer>> getStaffOnServers(List<SppPlayer> allPlayers) {
