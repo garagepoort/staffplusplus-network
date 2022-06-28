@@ -37,7 +37,7 @@ jobs:
       - name: Deploy bungee
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /home && ./network-update-latest-version.sh staffplusplus-network-bungee "${{steps.get-version.outputs.version}}" "https://testurl.be"
+          command: cd /home && ./network-update-latest-version.sh staffplusplus-network-bungee "${{steps.project.outputs.version}}" "https://nexus.staffplusplus.org/repository/maven-releases/be/garagepoort/staffplusplus-network-bungee/${{steps.project.outputs.version}}/staffplusplus-network-bungee-${{steps.project.outputs.version}}.jar"
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           privateKey: ${{ secrets.KEY}}
@@ -45,11 +45,11 @@ jobs:
       - name: Deploy velocity
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /home && ./network-update-latest-version.sh staffplusplus-network-velocity "${{steps.get-version.outputs.version}}" "https://testurl.be"
+          command: cd /home && ./network-update-latest-version.sh staffplusplus-network-velocity "${{steps.project.outputs.version}}" "https://nexus.staffplusplus.org/repository/maven-releases/be/garagepoort/staffplusplus-network-velocity/${{steps.project.outputs.version}}/staffplusplus-network-velocity-${{steps.project.outputs.version}}.jar"
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           privateKey: ${{ secrets.KEY}}
-          
+
       - name: Bump version
         run: chmod +x ./bump_version.sh && ./bump_version.sh
 
