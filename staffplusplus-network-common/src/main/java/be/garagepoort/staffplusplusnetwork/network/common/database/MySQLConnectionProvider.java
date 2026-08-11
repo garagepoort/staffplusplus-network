@@ -42,11 +42,6 @@ public class MySQLConnectionProvider implements SqlConnectionProvider {
     }
 
     @Override
-    public List<String> getMigrationPackages() {
-        return Collections.emptyList();
-    }
-
-    @Override
     public DatabaseType getDatabaseType() {
         return DatabaseType.MYSQL;
     }
