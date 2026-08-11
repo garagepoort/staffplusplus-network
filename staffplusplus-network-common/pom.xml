@@ -23,7 +23,7 @@
         <dependency>
             <groupId>net.shortninja.staffplus</groupId>
             <artifactId>staffplusplus-api</artifactId>
-            <version>8.1.2</version>
+            <version>8.2.2</version>
         </dependency>
         <dependency>
             <groupId>be.garagepoort.mcsqlmigrations</groupId>
